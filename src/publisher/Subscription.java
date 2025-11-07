@@ -9,12 +9,6 @@ import java.util.Map;
 public class Subscription {
     private Map<String, List<IUser>> subscribers = new HashMap<>();
 
-    public Subscription(String... channels) {
-        for (String channel : channels) {
-            this.subscribers.put(channel, new ArrayList<>());
-        }
-    }
-
     public void addChannel(String channel) {
         subscribers.putIfAbsent(channel, new ArrayList<>());
     }
